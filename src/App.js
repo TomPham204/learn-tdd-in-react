@@ -5,8 +5,8 @@ import MessageList from "./MessageList";
 export default function App() {
 	const [messages, setMessages] = useState([]);
 
-	function handleSend() {
-		setMessages([...messages, "New message"]);
+	function handleSend(message) {
+		setMessages([...messages, message]);
 	}
 
 	return (
