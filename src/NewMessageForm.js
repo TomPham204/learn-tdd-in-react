@@ -1,5 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+
 export default function NewMessageForm({ onSend }) {
+	NewMessageForm.propTypes = {
+		onSend: PropTypes.func.isRequired,
+	};
 	const [inputText, setInputText] = useState("");
 
 	function handleTextChange(event) {
@@ -12,7 +17,7 @@ export default function NewMessageForm({ onSend }) {
 	}
 
 	return (
-		<>
+		<React.Fragment>
 			<input
 				type="text"
 				data-testid="messageText"
@@ -25,6 +30,6 @@ export default function NewMessageForm({ onSend }) {
 			>
 				Send
 			</button>
-		</>
+		</React.Fragment>
 	);
 }
